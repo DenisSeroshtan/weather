@@ -70,7 +70,7 @@ class UI {
 
     this.wind.textContent = `${weather.wind.speed} м/с, ${UI.getDirectionWind(weather.wind.deg)}`;
     
-    this.sunrise.textContent = `Рассвет ${UI.getTime(weather.sys.sunrise)}`;
+    this.sunrise.textContent = `Восход ${UI.getTime(weather.sys.sunrise)}`;
 
     this.sunset.textContent = `Закат ${UI.getTime(weather.sys.sunset)}`;
   }
