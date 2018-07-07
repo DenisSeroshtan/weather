@@ -1,10 +1,12 @@
 const weather = new Weather('москва');
+const translate = new Translate();
+const ui = new UI();
 
-// weather.getWeather()
-//   .then(data => {
-//     console.log(data);
-//   })
-//   .catch(err => console.log(err))
+weather.getWeather()
+  .then(data => {
+    ui.paint(data)
+  })
+  .catch(err => console.log(err))
 
 
 // < img src = "http://openweathermap.org/img/w/03d.png" >
@@ -40,9 +42,8 @@ function getDirectionWind(deg) {
   return direction;
 }
 
-const translate = new Translate ('hello world');
 
-translate.getTranslate()
-  .then(data => {
-    console.log(data)
-  })
+// translate.getTranslate('hello world', 'weather')
+//   .then(data => {
+//     console.log(data.text)
+//   })
