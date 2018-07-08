@@ -63,7 +63,7 @@ class UI {
       .catch(err => {
         console.log(err);
         console.log('Что-то не так с переводчиком...');
-        
+
         this.location.textContent = city;
         this.desc.textContent = desc;
       });
@@ -71,15 +71,15 @@ class UI {
 
     this.temp.textContent = Math.floor(+(weather.main.temp) - 273) + " ℃";
 
-    this.humidity = weather.main.humidity + " %";
+    this.humidity.textContent = `влажность возд. ${weather.main.humidity} %`;
     this.pressure.textContent = parseFloat(Math.floor(weather.main.pressure * 0.75)) + ' мм.рт.cт';
 
     this.icon.setAttribute('src', `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`);
 
-    this.wind.textContent = `${weather.wind.speed} м/с, ${UI.getDirectionWind(weather.wind.deg)}`;
+    this.wind.textContent = `ветер ${weather.wind.speed} м/с, напр. ${UI.getDirectionWind(weather.wind.deg)}`;
     
-    this.sunrise.textContent = `Восход ${UI.getTime(weather.sys.sunrise)}`;
+    this.sunrise.textContent = `восход ${UI.getTime(weather.sys.sunrise)}`;
 
-    this.sunset.textContent = `Закат ${UI.getTime(weather.sys.sunset)}`;
+    this.sunset.textContent = `закат ${UI.getTime(weather.sys.sunset)}`;
   }
 }

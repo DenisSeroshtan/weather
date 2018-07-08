@@ -34,4 +34,3 @@ function setNewLocation(e) {
   $('#locModal').modal('hide');
 
 }
-
