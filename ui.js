@@ -59,8 +59,16 @@ class UI {
 
         this.location.textContent = city;
         this.desc.textContent = desc;
+      })
+      .catch(err => {
+        console.log(err);
+        console.log('Что-то не так с переводчиком...');
+        
+        this.location.textContent = city;
+        this.desc.textContent = desc;
       });
-    
+
+
     this.temp.textContent = Math.floor(+(weather.main.temp) - 273) + " ℃";
 
     this.humidity = weather.main.humidity + " %";
